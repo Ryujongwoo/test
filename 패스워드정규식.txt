@@ -1,0 +1,10 @@
+^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{10,16}$
+	var pattern = new RegExp("^(?=.*[a-zA-Z])(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{8,12}$");
+	alert(pattern.test(obj.password.value.trim()));
+	if(!pattern.test(obj.password.value.trim())) {
+		alert("비밀번호는 영문자 숫자 특수문자를 각각 1개 이상 포함해야 합니다.");
+		obj.password.value = "";
+		obj.repassword.value = "";
+		obj.password.focus();
+		return false;
+	}
